@@ -3,6 +3,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
   <title>Live Chat Room</title>
@@ -14,11 +17,11 @@
     <h1 class="my-4 text-center">Live Chat</h1>
     <!-- buttons for chatrooms -->
     <div class="chat-rooms mb-3 text-center">
-      <div class="my-2">Choose a chatroom:</div>
-      <button class="btn" id="general">#general</button>
-      <button class="btn" id="gaming">#gaming</button>
-      <button class="btn" id="music">#music</button>
-      <button class="btn" id="ninjas">#programming</button>
+      <p class="my-2">Choose a chatroom:</p>
+      <button class="btn" id="general">#General 📪</button>
+      <button class="btn" id="gaming">#Gaming 🎮</button>
+      <button class="btn" id="music">#Music 🎵</button>
+      <button class="btn" id="programming">#Programming 💻</button>
     </div>
     <!-- chat list / window -->
     <div class="chat-window">
@@ -28,7 +31,7 @@
     <form class="new-chat my-3">
       <div class="input-group">
         <div class="input-group-prepend">
-          <div class="input-group-text">Your message:</div>
+          <div class="input-group-text label">Your message:</div>
         </div>
         <input type="text" id="message" class="form-control" required>
         <div class="input-group-append">
@@ -40,7 +43,7 @@
     <form class="new-name my-3">
       <div class="input-group">
         <div class="input-group-prepend">
-          <div class="input-group-text">Update name:</div>
+          <div class="input-group-text label">Update name:</div>
         </div>
         <input type="text" id="name" class="form-control" required>
         <div class="input-group-append">
@@ -50,6 +53,23 @@
       <div class="update-mssg"></div>
     </form>
   </div>
+
+  <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyD9ocKHBW03V6Sc4qwntsqoomnt2zK2Tkg",
+        authDomain: "test-1add1.firebaseapp.com",
+        projectId: "test-1add1",
+        storageBucket: "test-1add1.appspot.com",
+        messagingSenderId: "422610885972",
+        appId: "1:422610885972:web:88d4077e267b5f0da4fcc1"
+    };
+    firebase.initializeApp(config);
+    const db = firebase.firestore();  
+  </script>
   
   <script src="scripts/chat.js"></script>
   <script src="scripts/ui.js"></script>
